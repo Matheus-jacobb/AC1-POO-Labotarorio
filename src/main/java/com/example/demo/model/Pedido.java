@@ -5,6 +5,7 @@ public class Pedido {
         private double valor;
         private String descricao;
         private String cliente;
+        private String data; 
     
         //Get e Setters 
         public int getCodigo() {
@@ -37,6 +38,14 @@ public class Pedido {
     
         public void setCliente(String cliente) {
             this.cliente = cliente;
+        }
+
+        public String getData() {
+            return data;
+        }
+
+        public void setData(String data) {
+            this.data = data;
         }
     
 

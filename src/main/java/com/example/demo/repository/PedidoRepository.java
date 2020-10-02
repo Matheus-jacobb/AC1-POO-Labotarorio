@@ -24,6 +24,7 @@ public class PedidoRepository {
         p1.setCliente("Facens");
         p1.setValor(1500);
         p1.setDescricao("Lenovo-T480");
+        p1.setData("13/07/1980");
 
         pedidos = new ArrayList<Pedido>();
         pedidos.add(p1);
@@ -49,6 +50,22 @@ public class PedidoRepository {
             }
         }
         return null;
+    }
+
+    public void delete (Pedido pedido){
+        pedidos.remove(pedido);
+    }
+
+    public Pedido update (Pedido pedido){
+
+        Pedido aux = getPedidosByCodigo(pedido.getCodigo());
+        if( aux != null){
+            aux.setCodigo(pedido.getCodigo());
+            aux.setData(pedido.getData());
+            aux.setDescricao(pedido.getDescricao());
+            aux.setValor(pedido.getValor());
+        }
+            return aux;
     }
 
 }
